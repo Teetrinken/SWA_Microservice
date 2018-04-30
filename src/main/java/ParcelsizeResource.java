@@ -5,6 +5,8 @@ import javax.ws.rs.core.Response;
 @Path( "size" )
 public class ParcelsizeResource
 {
+	AccessObject access;
+	
   @POST
   @Path( "calculate" )
   @Produces(MediaType.APPLICATION_JSON)
@@ -12,9 +14,11 @@ public class ParcelsizeResource
 	  System.out.println("Calculating size...");
 	  int result = request.length + 2 * request.width + 2 * request.height;
 	  
-	  MySQLAccess access = new MySQLAccess();
+	  if(access == null) 
+		  this.access = new MySQLAccess();
+	  
 	  try {
-		  request.size = access.getSize(result);
+		  request.size = this.access.getSize(result);
 	  } catch(Exception e) {
 		  System.out.println(e.getMessage());
 	  }
@@ -24,4 +28,8 @@ public class ParcelsizeResource
 	  
 	  return Response.ok(jsonString, MediaType.APPLICATION_JSON).build();
 	}
+  
+  public void setAccess(AccessObject object) {
+	  this.access = object;
+  }
 }

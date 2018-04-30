@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-public class MySQLAccess {
+public class MySQLAccess implements AccessObject {
 	private String dbUrl = "jdbc:mysql://localhost:3306/Parcelsize";
     private Connection dbConnection = null;
     private Statement statement = null;
