@@ -37,10 +37,10 @@ angular.
     
     this.calcSize = function(){
         this.jsonObject = angular.toJson(this.request, false);
-        console.log("JSON-Object: ", this.jsonObject);
+        console.log("JSON: ", this.jsonObject);
 
         $http({
-            url: "http://localhost:8000/parcel/size/calculate", 
+            url: "http://192.168.50.102:8000/parcel/size/calculate", 
             method: "POST",
             data: this.jsonObject,
             headers: {

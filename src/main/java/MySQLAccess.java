@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.Date;
 
 public class MySQLAccess implements AccessObject {
-	private String dbUrl = "jdbc:mysql://localhost:3306/Parcelsize";
+	private String dbUrl = "jdbc:mysql://mysql_parcelsize:3306/Parcelsize";
     private Connection dbConnection = null;
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
