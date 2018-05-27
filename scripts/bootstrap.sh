@@ -1,4 +1,5 @@
 ! /bin/sh
+sudo apt-get install sshpass
 
 export SSHPASS=vagrant
 sshpass -e sftp -oBatchMode=no -b - vagrant@192.168.50.103 << !
