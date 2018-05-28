@@ -68,7 +68,6 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-  config.vm.provision "docker"
-  config.vm.provision :shell, path: "scripts/bootstrap.sh"
+  config.vm.provision :shell, path: "scripts/bootstrap.sh", privileged: false
 
 end
