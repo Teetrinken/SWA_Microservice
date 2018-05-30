@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sftp vagrant@192.168.33.10 <<EOT
+sftp vagrant@192.168.50.103 <<EOT
   get -r images
   bye
 EOT
